@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+/* header */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+/* navbar */
+nav{
+    color: #515c0d;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    border-bottom: solid #515c0d 2px;
+    
+    
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    
+    width: 40%;
+   
+    justify-content: space-between;
+}
+
+nav ul li a{
+    color: #515c0d;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+nav .logo{
+    font-family: 'Nunito Sans', sans-serif;;
+}
+nav ul li a:hover{
+    font-weight: bold;
+    border-bottom: solid #515c0d 1px;
+}
+nav ul li a:focus{
+    font-weight: bold;
+    border-bottom: solid #515c0d 1px;
+}
+/* hamburgermenu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 14.4px;
+    justify-content: space-between;
+    position: relative;
+    
+}
+.menu-toggle input{
+    opacity: 0;
+    position: absolute;
+    width: 21px;
+    height:28px;
+    left: -1px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+     
+}
+
+.menu-toggle span {
+ display: block;   
+ width: 20px;
+ height: 3px;
+ background-color: #515c0d;
+ border-radius: 3px;
+ transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2){
+   
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+   
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+   transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+   transform: scale(0);
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(4){
+   transform: rotate(-45deg) translate(-1px, 0);
+}
+/* main */
+main{
+  
+   display: flex;
+}
+aside{
+    flex-basis: 20%;
+    background-color: #acacacb2;
+    border-left: solid #515c0d 2px;
+    justify-content: center;
+    display: flex;
+}
+.btn{
+    background-color: #515c0d;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #fff;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    border: none;
+
+      scroll-behavior: smooth;
+}
+.btn a{
+    color: #fff;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  
+   flex-basis: 80%;
+   padding: 20px;
+ 
+}
+.content article{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  transition: all 0.5s;
+  justify-content: center;
+    
+}
+
+.box-artikel{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 300px;
+    max-height: 400px;
+    justify-content: center;
+    flex-basis: 25%;
+    background-color: #fff;
+    box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.382);
+}
+.box-artikel:hover{
+    box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.382);
+    transform: scale(1.1);
+    transition: all 0.5s;
+    
+}
+.artikel-image{
+border-radius: 10px;
+height: 200px;
+overflow: hidden;
+justify-content: center;
+display: flex;
+
+}
+.artikel-deskripsi{
+    font-size: 12px;
+    
+    text-align: center;
+}
+.artikel-deskripsi>p{
+   
+    
+    text-align: left;
+}
+.bio-deskripsi{
+    font-size: 12px;
+    line-height: 30px;
+}
+article{
+    margin-bottom: 200px;
+}
+article .pendahuluan{
+    padding: 10px;
+    flex-basis: 50%;
+    
+  
+}
+.judul{
+    font-size: 3em;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+  
+}
+h1{
+    margin-bottom: 20px;
+    color: #515c0d;
+}
+.poster{
+    max-width: 400px;
+    width: 100%;
+   
+    
+}
+.contact-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+footer{
+    text-align: center;
+    background-color: #515c0d;
+    color: #fff;
+}
+/* responsive */
+/* tablet */
+@media screen and (max-width:768px){
+nav ul{
+    width: 40%;
+}
+main{
+flex-direction: column;
+}
+article{
+    justify-content: center;
+}
+}
+/* mobile */
+@media screen and (max-width:576px) {
+    article .pendahuluan{
+    flex-basis: 100%;
+    margin-bottom: 50px;
+    }
+    .box-artikel{
+    flex-basis: 100%;
+    }
+    .menu-toggle{
+        display: flex ;
+    }
+    aside{
+    border: none;
+    background-color: #515c0d;
+}
+
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color:#fff;
+        border-left: solid #515c0d 2px;
+       
+        opacity: 0;
+       
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+    nav ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
